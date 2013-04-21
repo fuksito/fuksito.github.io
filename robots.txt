@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://fuksito.github.io/fuksito/sitemap.xml 
