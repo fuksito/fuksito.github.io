@@ -6,6 +6,10 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
+        <!-- Foundation CSS -->
+        <link rel="stylesheet" href="/foundation/css/normalize.css">
+        <link rel="stylesheet" href="/foundation/css/foundation.min.css">
+
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
 
@@ -15,29 +19,31 @@
     </head>
     <body>
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
+        <header>
+          <h3 class="title"><a href="/">{{ site.name }}</a></h3>
+        </header>        
 
-          {{ content }}
+        <div class="main-wrap small-11">
 
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Vitaliy Yanchuk<br />
-                vitaliy@yanchuk.me
-              </p>
+            <div class='small-10 columns'>
+              {{ content }}
             </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/yourusername">github.com/fuksito</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/fuksito</a><br />
-              </p>
+
+            <div class='small-2 columns sidebar'>
+              <img src='/images/me.jpg' class='io7avatar' />
+              <small>author</small>
+              <p>Vitaliy Yanchuk</p>
+              <ul class='side-nav'>
+                <li><a href="mailto:vitaliy@yanchuk.me">vitaliy@yanchuk.me</a></li>
+                <li><a href="https://github.com/fuksito">github.com/fuksito</a></li>
+                <li><a href="https://twitter.com/fuksito">twitter.com/fuksito</a></li>
+              </ul>
             </div>
+
           </div>
         </div>
+        
         {% include tracking.html %}
+
     </body>
 </html>

@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "Make free heroku app to not fell to sleep"
+date:   2014-03-19 15:04:01
+---
+
+<p>Heroku is great service to serve apps. It can even be used free but unfortinatelly your apps go to sleep if they are not used for more than 60 minutes.</p>
+
+<p>You can say its fine, as apps are automatically turn on request, but sometimes you need it to be always on. Heroku provides with solution with payed plan but its quite a lot if you don't use it for any business.</p>
+
+<p>I found solution for this using Heroku Sheduller addon, and it seems to fully legit now to be used.<br/>
+So you need to activate this module on your app:</p>
+
+{% highlight bash %}
+heroku addons:add scheduler:standard
+{% endhighlight %}
+
+<p>Or add it from dashboard.</p>
+
+<p>Then in config add a command to be run twice an hour:</p>
+{% highlight bash %}
+curl -XHEAD http://your-app-name.herokuapp.com/
+{% endhighlight %}
