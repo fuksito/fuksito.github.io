@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "Measuring rails boot time with Bumbler"
+date:   2014-03-19 15:04:01
+---
+
+<p>Ever wondered what is taking so slow on your Rails app boot time. Me too, just got in touch with a nice gem <a href="https://github.com/nevir/Bumbler">Bumbler</a> that gathers and shows information on gems used in your app. </p>
+
+<p>Its easy to install and use. Installing just like other gem:</p>
+
+{% highlight bash %}
+$ gem install bumbler
+{% endhighlight %}
+
+
+<p>And usage is also quite easy: cd to the dir of your rails app and just run:</p>
+
+<p>Then in config add a command to be run twice an hour:</p>
+{% highlight bash %}
+$ bumbler
+{% endhighlight %}
+
+<p>It would show something like this: </p>
+
+{% highlight bash %}
+Slow requires:
+     12.26  unicode
+     15.82  russian
+     17.85  rmagick
+     18.25  kaminari
+     23.23  simplecov
+     24.90  dalli
+     29.05  levenshtein-ffi
+     30.53  sitemap_generator
+     30.61  omniauth-facebook
+     30.99  unicorn
+     40.04  execjs
+     44.92  omniauth-twitter
+     49.39  uglifier
+     51.15  factory_girl_rails
+     66.91  letter_opener
+     74.00  nokogiri
+    115.41  sass-rails
+    160.79  haml
+    193.81  rails
+    199.38  capistrano
+    246.53  fog
+    299.53  carrierwave
+    299.69  cancan
+{% endhighlight %}
+
+<p>In the left column is a time in milliseconds that each gem used to boot</p>
